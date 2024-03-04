@@ -39,9 +39,9 @@
                 </a>
                 <div class="collapse" id="collapsePage" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="layout-static.html">ajout</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">liste utlisateur</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">modifier utlisateur</a>
+                        <a class="nav-link" href="{{route('create.module')}}">ajout module</a>
+                        <a class="nav-link" href="layout-sidenav-light.html">liste des modules</a>
+                        <a class="nav-link" href="layout-sidenav-light.html">modifier un module</a>
                     </nav>
                 </div>
 
@@ -109,13 +109,6 @@
                         <a class="nav-link" href="layout-sidenav-light.html">modifier utlisateur</a>
                     </nav>
                 </div>
-
-
-
-
-
-
-
             </div>
         </div>
     </nav>
