@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_specialite');
             $table->foreign('id_specialite')->references('id_sp')->on('specialites');
             $table->string('date_inscription');
+            $table->string('numero');
             $table->timestamps();
         });
     }

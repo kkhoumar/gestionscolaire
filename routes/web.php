@@ -1,10 +1,15 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\ConnexionController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\EnseignantController;
-use App\Http\Controllers\EtudiantController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\adminController;
+use App\Http\Controllers\Admin\users\UserController as UsersUserController;
+//use App\Http\Controllers\Admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +30,12 @@ route::get('/',[ConnexionController::class,'index'])->name('connexion');
 route::post('/store',[ConnexionController::class,'store'])->name('connexion.store');
 
 
-//route dashboard
-route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
+//partie admin
+route::get('/admin',[adminController::class,'index'])->name('admin');
+
+route::get('/create.users',[UsersUserController::class,'index'])->name('create.users');
+route::post('/store.create',[UsersUserController::class,'store'])->name('store.create');
+//fin  de la partie admin
 //epace etudiant
 route::get('/etudiant',[EtudiantController::class,'index'])->name('etudiant');
 // espace enseignant

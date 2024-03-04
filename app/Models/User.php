@@ -17,9 +17,12 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    //protected $guarded = [];
+
     protected $fillable = [
         'name',
         'email',
+        'role_id',
         'password',
     ];
 
@@ -44,9 +47,13 @@ class User extends Authenticatable
     ];
  //relation entre user et user_role
 
-    public function user_role(){
+   /* public function user_role(){
 
         return $this->hasOne(user_role::class);
 
+    }*/
+
+    public function role(){
+        return $this->belongsTo(role::class);
     }
 }

@@ -32,11 +32,11 @@ class ConnexionController extends Controller
         //dd($request->email,$request->password);
 
         $connexion = $request->only(['email','password']);
-        if(Auth::attempt($connexion)  && Auth::user()->user_role->role_id  == 1){
-            return redirect()->route('dashboard')->with('massage','vous etes connectes');
-        }else if(Auth::attempt($connexion)  && Auth::user()->user_role->role_id  == 2){
+        if(Auth::attempt($connexion)  && Auth::user()->role->id  == 1){
+            return redirect()->route('admin')->with('massage','vous etes connectes');
+        }else if(Auth::attempt($connexion)  && Auth::user()->role->id  == 2){
             return redirect()->route('enseignant')->with('massage','vous etes connectes');
-        }else if(Auth::attempt($connexion)  && Auth::user()->user_role->role_id  == 3){
+        }else if(Auth::attempt($connexion)  && Auth::user()->role->id  == 3){
             return redirect()->route('etudiant')->with('massage','vous etes connectes');
         }else{
             return redirect()->back()->with('message','non base de donne');

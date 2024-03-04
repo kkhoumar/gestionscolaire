@@ -10,7 +10,7 @@
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
-    <body class="bg-primary">
+    <body class="bg-emerald-500">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -24,7 +24,7 @@
                                         @if (Session::get('message'))
                                         <div class="alert alert-danger">{{Session::get('message')}}</div>
                                        @endif
-                                      {{Hash::make('12345')}}
+                                      {{Hash::make('12345678')}}
                                         <form action="{{URL('store')}}" method="post"  name="f" autocomplete="off">
                                             {{ csrf_field() }}
                                             @method('POST')
