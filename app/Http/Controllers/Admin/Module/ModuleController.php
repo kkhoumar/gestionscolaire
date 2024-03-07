@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Admin\modules;
+namespace App\Http\Controllers\Admin\Module;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ModuleRequest;
 use Illuminate\Http\Request;
 
 class ModuleController extends Controller
@@ -13,7 +12,7 @@ class ModuleController extends Controller
      */
     public function index()
     {
-        return view('admin.module.AjoutModule');
+        //
     }
 
     /**
@@ -27,7 +26,7 @@ class ModuleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ModuleRequest $request)
+    public function store(Request $request)
     {
         //
     }

@@ -2,12 +2,13 @@
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\ConnexionController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\EnseignantController;
 use App\Http\Controllers\Admin\adminController;
+use App\Http\Controllers\Admin\Etudiant\EtudiantController as EtudiantEtudiantController;
+use App\Http\Controllers\Admin\Module\ModuleController as ModuleModuleController;
 use App\Http\Controllers\Admin\modules\ModuleController;
 use App\Http\Controllers\Admin\users\UserController as UsersUserController;
 //use App\Http\Controllers\Admin\UserController;
@@ -34,13 +35,13 @@ route::post('/store',[ConnexionController::class,'store'])->name('connexion.stor
 //partie admin
 route::get('/admin',[adminController::class,'index'])->name('admin');
 
-route::get('/create.users',[UsersUserController::class,'index'])->name('create.users');
-route::post('/store.create',[UsersUserController::class,'store'])->name('store.create');
+route::get('/create.users',[EtudiantEtudiantController::class,'index'])->name('create.users');
+route::post('/store.create',[EtudiantEtudiantController::class,'store'])->name('store.create');
 
-route::get('/create.module',[ModuleController::class,'index'])->name('create.module');
-route::post('/store.module',[ModuleController::class,'store'])->name('store.module');
+route::get('/create.module',[ModuleModuleController::class,'index'])->name('create.module');
+route::post('/store.module',[ModuleModuleController::class,'store'])->name('store.module');
 //fin  de la partie admin
 //epace etudiant
-route::get('/etudiant',[EtudiantController::class,'index'])->name('etudiant');
+//route::get('/etudiant',[EtudiantController::class,'index'])->name('etudiant');
 // espace enseignant
 route::get('/enseignant',[EnseignantController::class,'index'])->name('enseignant');
