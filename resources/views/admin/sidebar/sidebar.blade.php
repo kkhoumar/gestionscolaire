@@ -16,7 +16,7 @@
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{route('create.users')}}">ajout etudiant</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">liste etudiant </a>
+                        <a class="nav-link" href="{{route('show.etudiant')}}">liste etudiant </a>
                         <a class="nav-link" href="layout-sidenav-light.html">modifier  etudiant</a>
                     </nav>
                 </div>

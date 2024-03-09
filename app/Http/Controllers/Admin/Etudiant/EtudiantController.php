@@ -78,9 +78,16 @@ class EtudiantController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        $etudiant = Etudiant::get();
+         return view('admin.etudiant.listeetudiant',compact('etudiant'));
+    }
+
+
+
+    public function details($id){
+
     }
 
     /**

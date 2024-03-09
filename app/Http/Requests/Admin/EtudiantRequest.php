@@ -24,14 +24,14 @@ class EtudiantRequest extends FormRequest
         return [
             'nom'=>'required',
             'prenom'=>'required',
-            'email'=>'required',
+            'email'=>'required|email|unique:etudiants,email_etud',
             'naissance'=>'required',
             'lieu_naissance'=>'required',
             'numero'=>'required',
             'role_id'=>'required',
             'mot_passe'=>'required',
-            'photo'=>'required|image',
-
+            'photo'=>'required|max:300|Mimes:jpeg,jpg,png',
+            //dimensions:width=200,height=50'
           ];
     }
 
@@ -41,12 +41,14 @@ class EtudiantRequest extends FormRequest
           'nom.required'=>'veuillez entrer le nom',
           'prenom.required'=>'veuillez entrer le nom',
           'email.required'=>'veuillez entrer le nom',
+          'email.required|email|unique:etudiants,email_etud'=>'cette Adresse email existe deja dans notre base de donnee',
           'naissance.required'=>'veuillez entrer le nom',
           'lieu_naissance.required'=>'veuillez entrer le nom',
           'numero.required'=>'veuillez entrer le nom',
           'role_id.required'=>'veuillez entrer le nom',
           'mot_passe.required'=>'veuillez entrer le nom',
           'photo.required'=>'veuillez entrer le nom',
+
 
        ];
     }

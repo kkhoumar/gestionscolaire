@@ -37,6 +37,8 @@ route::get('/admin',[adminController::class,'index'])->name('admin');
 
 route::get('/create.users',[EtudiantEtudiantController::class,'index'])->name('create.users');
 route::post('/store.create',[EtudiantEtudiantController::class,'store'])->name('store.create');
+route::get('/show.etudiant',[EtudiantEtudiantController::class,'show'])->name('show.etudiant');
+route::get('/details.etudiant/{id}',[EtudiantEtudiantController::class,'details'])->name('details.etudiant');
 
 route::get('/create.module',[ModuleModuleController::class,'index'])->name('create.module');
 route::post('/store.module',[ModuleModuleController::class,'store'])->name('store.module');
