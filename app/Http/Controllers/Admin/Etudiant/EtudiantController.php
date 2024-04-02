@@ -80,14 +80,15 @@ class EtudiantController extends Controller
      */
     public function show()
     {
-        $etudiant = Etudiant::get();
+        $etudiant = Etudiant::orderBy('id_etud','desc')->cursorPaginate(3);
          return view('admin.etudiant.listeetudiant',compact('etudiant'));
     }
 
 
 
     public function details($id){
-
+       $details =Etudiant::find($id);
+        return view('admin.etudiant.details',compact('details'));
     }
 
     /**

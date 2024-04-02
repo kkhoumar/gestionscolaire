@@ -40,7 +40,7 @@
                 <div class="collapse" id="collapsePage" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{route('create.module')}}">ajout module</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">liste des modules</a>
+                        <a class="nav-link" href="{{route('show.module')}}">liste des modules</a>
                         <a class="nav-link" href="layout-sidenav-light.html">modifier un module</a>
                     </nav>
                 </div>
@@ -52,9 +52,8 @@
                 </a>
                 <div class="collapse" id="collapsePagess" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="layout-static.html">ajout</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">liste specailite</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">modifier utlisateur</a>
+                        <a class="nav-link" href="{{route('create.specialite')}}">ajout specialite</a>
+                        <a class="nav-link" href="{{route('show.specialite')}}">liste specailite</a>
                     </nav>
                 </div>
 

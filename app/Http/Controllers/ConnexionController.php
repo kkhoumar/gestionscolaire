@@ -39,7 +39,7 @@ class ConnexionController extends Controller
         }else if(Auth::attempt($connexion)  && Auth::user()->role->id  == 3){
             return redirect()->route('etudiant')->with('massage','vous etes connectes');
         }else{
-            return redirect()->back()->with('message','non base de donne');
+            return redirect()->back()->with('message','vous n\'existez pas dans notre base de donnée');
         }
 
     }

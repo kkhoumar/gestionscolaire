@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\adminController;
 use App\Http\Controllers\Admin\Etudiant\EtudiantController as EtudiantEtudiantController;
 use App\Http\Controllers\Admin\Module\ModuleController as ModuleModuleController;
 use App\Http\Controllers\Admin\modules\ModuleController;
+use App\Http\Controllers\Admin\specialite\specialiteController;
 use App\Http\Controllers\Admin\users\UserController as UsersUserController;
 //use App\Http\Controllers\Admin\UserController;
 
@@ -42,6 +43,14 @@ route::get('/details.etudiant/{id}',[EtudiantEtudiantController::class,'details'
 
 route::get('/create.module',[ModuleModuleController::class,'index'])->name('create.module');
 route::post('/store.module',[ModuleModuleController::class,'store'])->name('store.module');
+route::get('/show.module',[ModuleModuleController::class,'show'])->name('show.module');
+
+route::get('/create.specialite',[specialiteController::class,'index'])->name('create.specialite');
+route::post('/store.specialite',[specialiteController::class,'store'])->name('store.specialite');
+route::get('/show.specialite',[specialiteController::class,'show'])->name('show.specialite');
+route::get('/edit.specialite/{id}',[specialiteController::class,'edit'])->name('edit.specialite');
+route::post('/update.specialite',[specialiteController::class,'update'])->name('update.specialite');
+
 //fin  de la partie admin
 //epace etudiant
 //route::get('/etudiant',[EtudiantController::class,'index'])->name('etudiant');

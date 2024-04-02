@@ -77,7 +77,7 @@
                 @enderror
             </div>
 
-            <div class="form-group mt-2">
+           <div class="form-group mt-2">
                 <label  class="form-label text-uppercase fw-bold fs-3">State</label>
                 <select name="role_id" id="" class="form-select">
                     <option selected disabled class="">choisir un role</option>

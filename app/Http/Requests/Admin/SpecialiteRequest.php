@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ModuleRequest extends FormRequest
+class SpecialiteRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,17 +22,14 @@ class ModuleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'module'=>'required',
-            'coefficient'=>'required'
+           "designation_specialite"=>"required"
         ];
     }
-
 
     public function messages()
     {
         return [
-            'module.required'=>'veuillez entrer le module',
-            'coefficient.required'=>'veuillez entrer le coefficient'
+            "designation_specialite.required"=>"entrer une designation"
         ];
     }
 }

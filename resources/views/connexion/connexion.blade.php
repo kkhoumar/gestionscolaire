@@ -9,22 +9,29 @@
         <title>Login - SB Admin</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <style>
+            body{
+                background-image:url('image/oip.jpeg');
+            }
+        </style>
     </head>
+    <style></style>
     <body class="bg-emerald-500">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
                     <div class="container">
-                        <div class="row justify-content-center">
+                        <h1 class="text-center mt-2 text-bg-danger text-uppercase"> Bienvenue sur l'application de gestion scolaire </h1>
+                        <div class="row justify-content-center ">
                             <div class="col-lg-5">
-                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5 h-16">
 
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                    <div class="card-header text-bg-danger"><h3 class="text-center my-4">Login</h3></div>
                                     <div class="card-body">
                                         @if (Session::get('message'))
                                         <div class="alert alert-danger">{{Session::get('message')}}</div>
                                        @endif
-                                      {{Hash::make('12345678')}}
+
                                         <form action="{{URL('store')}}" method="post"  name="f" autocomplete="off">
                                             {{ csrf_field() }}
                                             @method('POST')
@@ -47,7 +54,7 @@
                                                 <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <input type="submit" value="enregistrement" class="btn btn-primary form-control">
+                                                <input type="submit" value="enregistrement" class="btn btn-danger form-control">
                                             </div>
                                         </form>
                                     </div>

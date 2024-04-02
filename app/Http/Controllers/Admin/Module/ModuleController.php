@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin\Module;
 
-use App\Http\Controllers\Controller;
+use App\Models\Module;
 use Illuminate\Http\Request;
+use MercurySeries\Flashy\Flashy;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\ModuleRequest;
 
 class ModuleController extends Controller
 {
@@ -12,7 +15,7 @@ class ModuleController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.module.AjoutModule');
     }
 
     /**
@@ -26,17 +29,22 @@ class ModuleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ModuleRequest $request)
     {
-        //
+        Module::create($request->all());
+        Flashy::message('votre module a ete bien crée');
+
+        return redirect()->route('create.module');
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        $module = Module::get();
+        return view('admin.module.listeModule',compact('module'));
     }
 
     /**

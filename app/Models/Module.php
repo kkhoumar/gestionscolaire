@@ -12,4 +12,7 @@ class Module extends Model
 
         return $this->belongsTo(Niveau::class);
     }
+    protected $fillable =[
+        'description_module','coefficient_module'
+    ];
 }
