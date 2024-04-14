@@ -3,9 +3,9 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
 
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{route('admin')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Administrateur
+                    page principal
                 </a>
                 <div class="sb-sidenav-menu-heading">getion scolaire</div>
                 <a class="nav-link collapsed text-uppercase" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">

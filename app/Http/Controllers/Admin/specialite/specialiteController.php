@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use MercurySeries\Flashy\Flashy;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\SpecialiteRequest;
+use League\CommonMark\Util\SpecReader;
 
 class specialiteController extends Controller
 {
@@ -73,8 +74,10 @@ class specialiteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function delete(string $id)
     {
-        //
+        $delete =Specialite::find($id);
+        $delete->delete();
+        return redirect()->route('show.specialite');
     }
 }

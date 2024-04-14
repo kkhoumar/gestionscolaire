@@ -25,7 +25,7 @@
                                             <td>{{$specialites->id_sp}}</td>
                                             <td>{{$specialites->designation_specialite	}}</td>
                                             <td ><a href="{{url('edit.specialite/'.$specialites->id_sp)}}" class="btn btn-danger" role="button">modifier</a></td>
-                                            <td ><a href="#" class="btn btn-danger" role="button" data-bs-toggle="button">supprimer</a></td>
+                                            <td ><a href="{{url('delete.specialite/'.$specialites->id_sp)}}" class="btn btn-danger">supprimer</a></td>
                                     </tr>
                                 </tbody>
                                 @endforeach

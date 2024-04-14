@@ -43,7 +43,7 @@ class ModuleController extends Controller
      */
     public function show()
     {
-        $module = Module::get();
+        $module = Module::all();
         return view('admin.module.listeModule',compact('module'));
     }
 
@@ -52,22 +52,29 @@ class ModuleController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $module = Module::find($id);
+        return view('admin.module.edit',compact('module'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, String $id)
     {
-        //
+        $module = Module::find($id);
+        $module->update($request->all());
+        return redirect()->route('show.module');
+
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function delete(string $id)
     {
-        //
+        $delete = Module::find($id);
+        $delete->delete();
+        return redirect()->route('show.module');
     }
 }

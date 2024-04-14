@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Module extends Model
 {
     use HasFactory;
+
+    protected $primaryKey ='id_m';
+
     public function niveau(){
 
         return $this->belongsTo(Niveau::class);

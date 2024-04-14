@@ -7,16 +7,41 @@
         <h1 style="color: white" class="text-uppercase"> liste des etudiants</h1>
     </div>
     <div class="row mt-2">
-        <div class="col-2">
-           <a href=""> <div class="btn btn-success text-uppercase">imprimer  pdf</div></a>
+        <div class="col-2 P-1">
+           <a href="{{route('pdf')}}"> <div class="btn btn-success text-uppercase" target="_blank"> imprimer pdf</div></a>
         </div>
         <div class="col-2">
-            <div class="btn btn-success text-uppercase">imprimer world</div>
+            <div class="btn btn-success text-uppercase"> imprimer world</div>
         </div>
 
-        <div class="col-2">
-            <div class="btn btn-success text-uppercase">imprimer excel</div>
+        <div class="col-4">
+
+            <form method="POST" action="{{ route('excel.import') }}" enctype="multipart/form-data" >
+            {{ csrf_field() }}<!-- CSRF Token -->
+                @csrf
+                <input type="file" name="fichier" class="">
+                <button type="submit" class="btn btn-success  form-inline">importer</button>
+            </form>
         </div>
+
+        <div class="col-4">
+            <form method="POST" action="{{ url('simple-excel/export') }}" name="f">
+                @method('POST')
+                 {{ csrf_field() }}
+
+                   <input type="text" name="name" placeholder="Nom de fichier" >
+
+                   <select name="extension" >
+                       <option value="xlsx" >.xlsx</option>
+                       <option value="csv" >.csv</option>
+                   </select>
+
+                   <button type="submit" class="btn btn-success">Exporter</button>
+
+               </form>
+
+        </div>
+
     </div>
 
                          <div class="card-body col-12">
